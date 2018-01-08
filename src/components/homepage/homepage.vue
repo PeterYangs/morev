@@ -162,7 +162,6 @@
 			this.$nextTick(() => {
 				this.$vux.loading.show({
 			        text: 'Loading...'
-			       
 			    })
 				setTimeout(() => {
 					this.$vux.loading.hide()
@@ -389,7 +388,7 @@
 	}
 	
 	.brand-list li {
-		margin-bottom: 20px;
+		padding: 10px;
 	}
 	
 	.brand-item {

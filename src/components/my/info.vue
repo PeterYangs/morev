@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 			<div class="buttom-wrapper">
-				<p class="buttom"><span v-show="!show" @click="onDropOut">退出登录</span><spinner v-show="show" type="lines" size="20px"></spinner></p>	
+				<p class="buttom"><span @click="onDropOut">退出登录</span></p>
 			</div>
 		</div>
 	</div>
@@ -49,7 +49,6 @@
 			return {
 				title: '个人信息',
 				show: false,
-				
 				text: '炒作成功是的'
 			}
 		},
@@ -60,19 +59,35 @@
 		
 		methods: {
 			onDropOut() {
-				this.show = true
-				setTimeout(() => {
-					this.show = false
-					this.$vux.toast.show({
-						text: "<span class='icon succeed'></span><span class='toast-span'>"+ this.text +"</span>",
-						type: 'text',
-						position: 'top',
-						isShowMask: true
-					})
-				},1000)
+			    let that = this
+                this.$vux.confirm.show({
+                    title: '确认?',
+                    content: '确认注销登录吗?',
+                    onShow () {
+                        console.log('plugin show')
+                    },
+                    onHide () {
+                        console.log('plugin hide')
+                    },
+                    onCancel () {
+                        console.log('plugin cancel')
+                    },
+                    onConfirm () {
+                        that.$vux.loading.show({
+                            text: 'Loading...'
+                        })
+                        window.setTimeout(() => {
+                            that.$vux.loading.hide()
+                            that.$vux.toast.show({
+                                text: "<span class='icon succeed'></span><span class='toast-span'>操作成功</span>",
+                                type: 'text',
+                                position: 'top',
+                                isShowMask: true
+                            })
+                        },1000)
+                    }
+                })
 			},
-			
-			
 		},
 		
 		components: {

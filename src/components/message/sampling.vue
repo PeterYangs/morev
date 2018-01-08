@@ -24,8 +24,8 @@
 			</div>
 		</div>
 		<div class="submit" @click="onSubmit">
-			<span v-show="!lineLoading">提交订单</span>
-			<spinner v-show="lineLoading" type="lines" size="20px"></spinner>
+			<span>提交订单</span>
+			<!--<spinner v-show="lineLoading" type="lines" size="20px"></spinner>-->
 		</div>
 	</div>
 </template>
@@ -59,16 +59,35 @@
 			},
 			
 			onSubmit() {
+			    let that = this
 				this.lineLoading = true
-				window.setTimeout(() => {
-					this.lineLoading = false
-					this.$vux.toast.show({
-						text: "<span class='icon succeed'></span><span class='toast-span'>操作成功</span>",
-						type: 'text',
-						position: 'top',
-						isShowMask: true
-					})
-				},2000)
+				this.$vux.confirm.show({
+                    title: '确认?',
+                    content: '确定提交订单',
+                    onShow () {
+                        console.log('plugin show')
+                    },
+                    onHide () {
+                        console.log('plugin hide')
+                    },
+                    onCancel () {
+                        console.log('plugin cancel')
+                    },
+                    onConfirm () {
+                        that.$vux.loading.show({
+                            text: 'Loading...'
+						})
+                        window.setTimeout(() => {
+                            that.$vux.loading.hide()
+                            that.$vux.toast.show({
+								text: "<span class='icon succeed'></span><span class='toast-span'>操作成功</span>",
+								type: 'text',
+								position: 'top',
+								isShowMask: true
+							})
+                        },1000)
+                    }
+				})
 			}
  		},
 		

@@ -18,7 +18,7 @@
 		<!--内容-->
 		<div class="content">
 			<div class="" v-show="tabIndex == '0'">
-				sdfsdf
+				sdf
 			</div>
 			<div class="" v-show="tabIndex == '1'">
 				sd
@@ -47,7 +47,9 @@
 		methods: {
 			onTabIndex(index) {
 				this.tabIndex = index
-			}
+			},
+
+
 		},
 		
 		components: {

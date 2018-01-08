@@ -11,10 +11,12 @@ import axios from 'axios'
 import 'lib-flexible'
 import { ToastPlugin } from 'vux'
 import { LoadingPlugin } from 'vux'
-
+import { ConfirmPlugin } from 'vux'
 
 Vue.use(ToastPlugin)
 Vue.use(LoadingPlugin)
+Vue.use(ConfirmPlugin)
+
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
 Vue.prototype.router = router

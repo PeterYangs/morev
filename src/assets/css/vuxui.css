@@ -111,3 +111,11 @@
 	background: url(../img/timg.jpg) no-repeat !important;
 	background-size: 100%!important;
 }*/
+
+.weui-dialog__ft {
+	line-height: 80px!important;
+}
+
+.weui-dialog__hd {
+	padding: 40px 1.6em 50px!important;
+}

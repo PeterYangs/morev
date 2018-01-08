@@ -1,0 +1,110 @@
+.icon {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+}
+
+/*.search {
+	background: url(../img/rest/search.png) no-repeat;
+	background-size: cover;
+}*/
+
+.close-white {
+	background: url(../img/rest/closewhite.png);
+	background-size: cover;
+}
+
+.close {
+	background: url(../img/rest/close.png) no-repeat;
+	background-size: cover;
+}
+
+.id {
+	background: url(../img/rest/id.png) no-repeat;
+	background-size: contain;
+}
+
+.password {
+	background: url(../img/rest/password.png) no-repeat;
+	background-size: contain;
+}
+
+.back {
+	background: url(../img/rest/back.png) no-repeat;
+	background-size: cover;
+}
+
+.message {
+	background: url(../img/rest/message.png) no-repeat;
+	background-size: cover;
+}
+
+.add {
+	background: url(../img/rest/add.png) no-repeat;
+	background-size: cover;
+}
+
+.minus {
+	background: url(../img/rest/minus.png) no-repeat;
+	background-size: cover;
+}
+
+.succeed {
+	background: url(../img/rest/succeed.png) no-repeat;
+	background-size: cover;
+}
+
+.failed {
+	background: url(../img/rest/failed.png) no-repeat;
+	background-size: cover;
+}
+
+.backtwo {
+	background: url(../img/rest/backtwo.png) no-repeat;
+	background-size: cover;
+}
+
+.subtract {
+	background: url(../img/rest/subtract.png) no-repeat;
+	background-size: cover;
+}
+
+.procurement {
+	background: url(../../assets/img/icon/procurement.png) no-repeat;
+	background-size: 100%;
+}
+
+.undetermined {
+	background: url(../img/icon/undetermined.png) no-repeat;
+	background-size: 100%;
+}
+
+.history {
+	background: url(../img/icon/history.png) no-repeat;
+	background-size: 100%;
+}
+
+.comment {
+	background: url(../img/icon/comment.png) no-repeat;
+	background-size: 100%;
+}
+
+.collect {
+	background: url(../img/icon/collect.png) no-repeat;
+	background-size: 100%;
+}
+
+.attention {
+	background: url(../img/icon/attention.png) no-repeat;
+	background-size: 100%;
+}
+
+.manage {
+	background: url(../img/icon/info.png) no-repeat;
+	background-size: 100%;
+}
+
+.enquiry {
+	background: url(../img/icon/enquiry.png) no-repeat;
+	background-size: 100%;
+}

@@ -2,7 +2,12 @@
 	<div class="container">
 		<vtitle :title="title"></vtitle>
 		<div class="search-wrapper">
-			<span class="icon search"></span>
+			<div class="wrapper">
+				<input type="text" v-model="search" placeholder="搜索商品"/>
+				<div class="search" @click="onSearch">
+					<span></span>
+				</div>
+			</div>
 		</div>
 		<div class="goods">
 			<div class="menu-wrapper" ref="menuWrapper">
@@ -267,7 +272,7 @@
 						]
 					}
 				],
-
+                search: '',
 			}
 		},
 
@@ -345,6 +350,10 @@
 			
 			noNavTo(url) {
 				this.$router.push(url)
+			},
+
+            onSearch() {
+				console.log('1')
 			}
 		},
 
@@ -359,17 +368,56 @@
 		display: flex;
 		flex-direction: column;
 	}
-	
+
 	.search-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 75px;
 		background: #00579E;
 	}
-	
+
+	.wrapper {
+		display: flex;
+	}
+
+	.wrapper input{
+		width: 400px;
+		height: 48px;
+		font-size: 24px;
+		border: none;
+		outline: none;
+		text-indent: 24px;
+		border-radius: 32px 0 0 32px;
+	}
+
+	.wrapper .search {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 75px;
+		font-size: 24px;
+		height: 48px;
+		line-height: 48px;
+		border-radius: 0 32px 32px 0;
+		background-color: #009FE6;
+	}
+
+	.search span {
+		width: 32px;
+		height: 32px;
+		background: url(../../assets/img/rest/search.png) no-repeat;
+		background-size: cover;
+	}
+
 	.goods {
 		flex: 1;
 		display: flex;
 		position: fixed;
-		top: 122px;
-		height: 1118px;
+		top: 157px;
+		height: 1083px;
 		overflow: hidden;
 	}
 	

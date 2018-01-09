@@ -108,3 +108,8 @@
 	background: url(../img/icon/enquiry.png) no-repeat;
 	background-size: 100%;
 }
+
+.heat {
+	background: url(../img/icon/heat.png) no-repeat;
+	background-size: 23.5px 23.5px;
+}

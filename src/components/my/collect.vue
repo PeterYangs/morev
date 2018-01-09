@@ -20,11 +20,11 @@
 								<h3>蔓越莓切丁</h3>
 								<div class="icon-wrapper">
 									<div class="item">	
-										<span class="icon"></span>
+										<span class="icon heat"></span>
 										<span class="number">59</span>
 									</div>
 									<div class="item">	
-										<span class="icon"></span>
+										<span class="icon attention"></span>
 										<span class="number">2</span>
 									</div>
 								</div>
@@ -216,9 +216,9 @@
 		
 	.item .icon {
 		margin-right: 10px;
-		width: 45px;
+		width: 25px;
 		height: 25px;
-		background: #009BE4;
+
 	}
 	
 	.select {

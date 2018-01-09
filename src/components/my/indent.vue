@@ -73,7 +73,7 @@
 	}
 	
 	.slide {
-		transform: translateX(68px);
+		transform: translateX(67px);
 	}
 	
 	.movep {

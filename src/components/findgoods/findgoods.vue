@@ -433,8 +433,8 @@
 	}
 	
 	.foods-item .icon {
-		width: 175px;
-		height: 175px;
+		width: 200px;
+		height: 200px;
 	}
 	
 	.foods-item p {

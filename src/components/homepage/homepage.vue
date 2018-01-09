@@ -88,7 +88,7 @@
 	import Swiper from 'vux/src/components/swiper/swiper.vue'
 	import SwiperItem from 'vux/src/components/swiper/swiper-item.vue'
 	import BSrcoll from 'better-scroll'
-	import split from '../components/split'
+
 	export default {
 		directives: {
 		   TransferDom

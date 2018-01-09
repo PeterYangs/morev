@@ -75,9 +75,17 @@
 
 .vux-toast .weui-toast__content {
 	display: flex;
-	justify-content: center;
+	/*justify-content: center;*/
 	align-items: center;
 	background-color: #DEDEDE!important;
+}
+
+.weui-toast__content .toast-span {
+    flex: 1;
+}
+
+.weui-toast__content .icon {
+    margin-left: 20px;
 }
 
 .vux-toast .weui-toast {
@@ -85,7 +93,6 @@
 }
 
 .toast-span {
-	margin-left: 10px;
 	font-size: 22px;
 	color: #333333;
 }
@@ -111,6 +118,11 @@
 	background: url(../img/timg.jpg) no-repeat !important;
 	background-size: 100%!important;
 }*/
+
+.weui-dialog__title {
+    color: #ff0000;
+    font-size: 30px!important;
+}
 
 .weui-dialog__ft {
 	line-height: 80px!important;

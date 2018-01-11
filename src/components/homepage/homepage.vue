@@ -358,7 +358,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-right: 20px;
+		padding: 0 20px 0 10px;
 		height: 70px;
 		box-shadow: 0 0 3px #CCCCCC;
 		z-index: 10;

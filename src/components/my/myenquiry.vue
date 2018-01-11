@@ -138,7 +138,7 @@
 	
 	.top .price {
 		color: #FF0000;
-		font-size: 20px;
+		font-size: 28px;
 		font-weight: 700;
 	}
 	

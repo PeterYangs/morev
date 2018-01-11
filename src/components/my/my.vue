@@ -33,23 +33,27 @@
 				optionList: [
 					{
 						title: '我的采购',
-						url: '/indent',
-						class: 'procurement'
+						url: '/indent/0',
+						class: 'procurement',
+						
 					},
 					{
 						title: '待定采购',
-						url: '',
-						class: 'undetermined'
+						url: '/indent/2',
+						class: 'undetermined',
+						
 					},
 					{
 						title: '历史采购',
-						url: '',
-						class: 'history'
+						url: '/indent',
+						class: 'history',
+						
 					},
 					{
 						title: '待评论采购',
-						url: '',
-						class: 'comment'
+						url: '/indent/3',
+						class: 'comment',
+						
 					},
 					{
 						title: '我的收藏',

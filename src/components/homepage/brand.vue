@@ -11,7 +11,7 @@
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
 					</p>
-					<span>关注</span>
+					<span :class="{'add':type == true}" @click="addAttention()">关注</span>
 				</div>
 			</div>
 			<div class="list-wrapper" ref="listWrapper">
@@ -92,7 +92,9 @@
 					},
 				],
 				
-				dateil: false
+				dateil: false,
+
+                type: false
 			}
 		},
 
@@ -107,6 +109,25 @@
 		methods: {
 			noNavTo(url) {
 				this.$router.push(url)
+			},
+
+            addAttention(name) {
+			    this.type = !this.type
+				if (this.type) {
+                    this.$vux.toast.show({
+                        text: "<span class='icon succeed'></span><span class='toast-span'>关注成功</span>",
+                        type: 'text',
+                        position: 'top',
+                        isShowMask: true
+                    })
+				} else {
+                    this.$vux.toast.show({
+                        text: "<span class='icon succeed'></span><span class='toast-span'>以取消关注</span>",
+                        type: 'text',
+                        position: 'top',
+                        isShowMask: true
+                    })
+				}
 			}
 		},
 
@@ -182,8 +203,13 @@
 		color: #FFFFFF;
 		background: #1AAD19;
 		border-radius: 5px;
+		transition: .5s;
 	}
-	
+
+	.desc .add {
+		background: #009BE4;
+	}
+
 	.list-wrapper {
 		flex: 1;
 		overflow: hidden;
@@ -199,7 +225,11 @@
 	.list-wrapper ul li {
 		flex: 0 0 45%;
 	}
-	
+
+	.desc .add {
+
+	}
+
 	.text {
 		display: flex;
 		flex-direction: column;

@@ -17,6 +17,7 @@ import enquiry from '@/components/my/enquiry'
 import indent from '@/components/my/indent' 
 import info from '@/components/my/info'
 import myenquiry from '@/components/my/myenquiry'
+import lineItem from '@/components/my/lineItem'
 
 
 import findgoods from '@/components/findgoods/findgoods'
@@ -126,7 +127,7 @@ export default new Router({
     	component: productdateils
     },
     {
-    	path: '/indent',
+    	path: '/indent/:tab',
     	component: indent
     },
     {
@@ -149,5 +150,9 @@ export default new Router({
     	path:'/sampling',
     	component: sampling
     },
+	  {
+		  path:'/lineItem/:type',
+		  component: lineItem
+	  },
   ]
 })

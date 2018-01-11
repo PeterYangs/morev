@@ -415,8 +415,8 @@
 	.goods {
 		flex: 1;
 		display: flex;
-		position: fixed;
-		top: 157px;
+		position: absolute;
+		top: 155px;
 		height: 1083px;
 		overflow: hidden;
 	}

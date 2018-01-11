@@ -52,10 +52,10 @@ export default new Router({
       		path: '/', 
       		redirect: '/homepage'
       	},
-				{
-					path: '/my',
-					component: my
-				},
+		{
+			path: '/my',
+			component: my
+		},
       	{
       		path: '/homepage',
       		component: homepage,

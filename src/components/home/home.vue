@@ -3,7 +3,7 @@
 		<div class="main">
 			<transition name="hide">
 			 	<keep-alive>
-			  	<router-view></router-view>
+			  		<router-view></router-view>
 				</keep-alive>	
 		</transition>
 		</div>
@@ -95,7 +95,6 @@ export default {
 		right: 0;
 		display: flex;
 		background:#009BE4;
-		
 	}
 	
 	.tab-item {

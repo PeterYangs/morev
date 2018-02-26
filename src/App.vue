@@ -17,15 +17,17 @@ export default {
 <style scoped>
 #app {
 	height: 100%;
-	overflow-y: auto;
+	overflow: hidden;
 }
 	
 .show-enter-active, .show-leave-active {
 	transition: 0.5s;
 }
 
-.show-enter, .show-leave-to {
+.show-enter {
 	opacity: 0;
-	transform: scale(1.05,1.05);
+	transform: scale(0.95,0.95);
 }
+
+
 </style>

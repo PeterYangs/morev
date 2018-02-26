@@ -11,9 +11,6 @@
 			<ul>
 				<li class="item" v-for="(item,index) in list">
 					<div class="left">
-						<span class="icon" :class="{'pitch':item.type}" @click="onPitch(index)"></span>
-					</div>
-					<div class="right">
 						<div class="logo">
 							<img src="../../assets/img/timg.jpg"/>
 						</div>
@@ -22,9 +19,15 @@
 							<span>1/2切片</span>
 						</div>
 					</div>
+					<div class="right">
+						<span class="icon" :class="{'pitch':item.type}" @click="onPitch(index)"></span>
+					</div>
 				</li>
 			</ul>
 		</div>
+        <div class="submit">
+            立即询价
+        </div>
 	</div>
 </template>
 
@@ -151,13 +154,13 @@
 	}
 	
 	.logo img {
-		width: 120px;
-		height: 120px;
+		width: 140px;
+		height: 140px;
 	}
 	
 	.item {
 		display: flex;
-		padding: 10px 20px;
+		padding: 20px 20px 20px 50px;
 		border-bottom: 1px solid rgba(7,17,27,0.1);
 	}
 	
@@ -165,7 +168,7 @@
 		border-bottom: none;
 	}
 	
-	.left {
+	.right {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -174,13 +177,13 @@
 	}
 	
 	.icon {
-		padding: 5px;
+		padding: 10px;
 		background:url(../../assets/img/rest/select.png) no-repeat;
 		background-size: 100%;
 		transition: .5s;
 	}
 	
-	.left .pitch {
+	.right .pitch {
 		background:url(../../assets/img/rest/select01.png) no-repeat ;
 		background-size: 100%;
 		animation: move .5s cubic-bezier(.17,.67,.95,.46);
@@ -204,7 +207,7 @@
 		}
 	}
 	
-	.right {
+	.left {
 		flex: 1;
 		display: flex;
 		padding-left: 20px;
@@ -237,5 +240,16 @@
 		opacity: 0;
 		transform: translateX(-80%);
 	}
+
+    .submit {
+        position: fixed;
+        bottom: 110px;
+        right: 120px;
+        padding: 10px 20px;
+        font-size: 30px;
+        color: #FFFFFF;
+        background: #0965b1;
+        border-radius: 10px;
+    }
 	
 </style>

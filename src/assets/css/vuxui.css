@@ -1,7 +1,7 @@
 
 .vux-swiper {
 	width: 100%;
-	height: 400px!important;
+	/*height: 400px!important;*/
 }
 
 .weui-cells__title,.weui-label,.vux-cell-value,.weui-input {
@@ -93,10 +93,8 @@
 }
 
 .toast-span {
-
 	font-size: 22px;
 	color: #333333;
-
 }
 
 .vux-loading .weui-toast {
@@ -116,11 +114,6 @@
 	font-size: 30px!important;
 }
 
-/*.weui-loading {
-	background: url(../img/timg.jpg) no-repeat !important;
-	background-size: 100%!important;
-}*/
-
 .weui-dialog__title {
     color: #ff0000;
     font-size: 30px!important;
@@ -132,4 +125,39 @@
 
 .weui-dialog__hd {
 	padding: 40px 1.6em 50px!important;
+}
+
+.vux-slider > .vux-swiper > .vux-swiper-item  {
+	line-height: 0.8rem!important;
+}
+
+.text-scroll > .vux-swiper {
+	height: 60px!important;
+}
+
+.img-scroll > .vux-swiper {
+	height: 360px!important;
+}
+
+.vux-number-selector {
+	height: 0.7rem!important;
+	line-height: 0.7rem!important;
+}
+
+.vux-number-input {
+	height: 0.7rem!important;
+	line-height: 0.7rem!important;
+	font-size: 30px!important;
+}
+
+.vux-number-selector svg {
+	vertical-align: middle;
+}
+
+.weui-cells {
+	margin: 0!important;
+}
+
+.weui-cells:before {
+	border: none!important;
 }

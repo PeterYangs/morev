@@ -4,16 +4,24 @@
 		<div class="content">
 			<div class="portrait">
 				<div class="img-wrapper">
-					<img src="../../assets/img/timg.jpg"/>	
+					<img src="../../assets/img/timg.jpg"/>
+
 				</div>
+				<p>登录/注册</p>
 			</div>
 			<div class="headline">
 				<span class="left">采购管理</span>
 				<span class="right"><span>查看全部采购</span><span class="on">更多</span></span>
 			</div>
 			<div class="options-wrapper">
-				<div>
+				<div class="top">
 					<div class="option" v-for="(item,index) in optionList">
+						<span class="icon" :class="item.class" @click="onNavTo(item.url)"></span>
+						<p>{{item.title}}</p>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="option" v-for="(item,index) in myOption">
 						<span class="icon" :class="item.class" @click="onNavTo(item.url)"></span>
 						<p>{{item.title}}</p>
 					</div>
@@ -50,32 +58,34 @@
 						
 					},
 					{
-						title: '待评论采购',
+						title: '待评论',
 						url: '/indent/3',
 						class: 'comment',
 						
 					},
-					{
-						title: '我的收藏',
-						url: '/collect',
-						class: 'collect'
-					},
-					{
-						title: '商家关注',
-						url: '/attention',
-						class: 'attention'
-					},
-					{
-						title: '账户管理',
-						url: '/info',
-						class: 'manage'
-					},
-					{
-						title: '我的询价',
-						url: '/enquiry',
-						class: 'enquiry'
-					},
-				]
+				],
+				myOption: [
+                    {
+                        title: '我的收藏',
+                        url: '/collect',
+                        class: 'collect'
+                    },
+                    {
+                        title: '商家关注',
+                        url: '/attention',
+                        class: 'attention'
+                    },
+                    {
+                        title: '账户管理',
+                        url: '/info',
+                        class: 'manage'
+                    },
+                    {
+                        title: '我的询价',
+                        url: '/enquiry',
+                        class: 'enquiry'
+                    },
+				],
 			}
 		},
 		
@@ -102,23 +112,35 @@
 <style scoped>
 	.portrait {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 200px;
+		padding: 30px 0;
 		background: #ccc;
 	}
 	
 	.img-wrapper {
+		margin-top: 20px;
 		width: 150px;
 		height: 150px;
 	}
-	
+
+	.img-wrapper img {
+		border-radius: 50%;
+	}
+
+	.portrait p {
+		margin: 20px 0 30px 0;
+		font-size: 32px;
+		text-align: center;
+	}
+
 	.content .headline {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
 		padding: 20px;
-		box-shadow: 0 0 3px #CCCCCC;
+		border-bottom: 1px solid rgba(7,17,27,0.1);
 	}
 	
 	.headline .left{
@@ -145,25 +167,33 @@
 	}
 	
 	.options-wrapper {
-		background: #333;
-		border-top: 1px solid #DEDEDE;
-		border-bottom: 1px solid #DEDEDE;
-		box-shadow: 0 0 3px #CCCCCC;
+
 	}
-	
+
+	.options-wrapper .top {
+		padding-bottom: 20px;
+	}
+
+	.options-wrapper .bottom {
+		padding-top: 20px;
+	}
+
 	.options-wrapper>div {
 		display: flex;
 		flex-wrap: wrap;
-		background: #FFFFFF;
 	} 
 	
 	.options-wrapper>div .option {
 		flex: 0 0 25%;
-		padding: 10px;
+		padding: 20px 10px;
 		text-align: center;
 		box-sizing: border-box;
 	}
-	
+
+	.options-wrapper > div:first-child {
+		border-bottom: 10px solid #f3f5f7;
+	}
+
 	.icon {
 		width: 54px;
 		height: 54px;
@@ -172,12 +202,9 @@
 	
 	.option p {
 		margin-top: 10px;
-		font-size: 20px;
-		color: #666666;
+		font-size: 28px;
+		color: #333;
 	}
-	
-	.botton {
-		margin-top: 10px;
-	}
+
 	
 </style>

@@ -1,11 +1,19 @@
 <template>
-	<div class="container">
-		<vtitle :title="title"></vtitle>
+	<div class="container-tab">
+		<!--<vtitle :title="title"></vtitle>-->
+		<div class="title">
+			<span class="back left" @click="onGoBack"></span>
+			<span>消息</span>
+			<span class="icon messageindex">
+				<p>1</p>
+			</span>
+		</div>
 		<div class="tab">
 			<div class="tab-item" v-for="(item,index) in tabs" :class="{'pitch':tabIndex === index}" @click="onTabIndex(index)">
 				<p :class="{'movep':tabIndex === index}">{{item}}</p>
 			</div>
-			<div class="slide" :class="classMap[tabIndex]"></div>	
+			<span :class="{'top':tabIndex === 1}" v-show="tabIndex === 1"></span>
+			<div class="slide" :class="classMap[tabIndex]"></div>
 		</div>
 		<!--内容-->
 		<div class="content">
@@ -15,23 +23,15 @@
 					<li v-for="(item,index) in list">
 						<div class="portrait">
 							<img src="../../assets/img/timg.jpg"/>
+							<p>1</p>
 						</div>
 						<div class="message">
-							<h3><span class="name">慕味客服</span><span class="date">17/12/12</span></h3>
-							<p>你好，请问有什么可以帮您。</p>
+							<h3><span class="name">{{item.name}}</span><span class="date">17/12/12</span></h3>
+							<p>{{item.text}}</p>
 						</div>
 					</li>
-					<li v-for="(item,index) in list">
-						<div class="portrait">
-							<img src="../../assets/img/timg.jpg"/>
-						</div>
-						<div class="message">
-							<h3><span class="name">慕味飞盈</span><span class="date">17/12/12</span></h3>
-							<p>今日优鲜沛上新三款新产品，总有一款适合你~</p>
-						</div>
-					</li>
-					<span @click="onShow1">点击</span>
-					<span @click="onShow">可以</span>
+					<!--<span @click="onShow1">点击</span>-->
+					<!--<span @click="onShow">可以</span>-->
 				</ul>
 			</div>
 			<!--公告-->
@@ -47,7 +47,7 @@
 									<p>
 										PLMA自有品牌展，慕味与你同行。作为全球优质农产品品牌发行商，more-V拥有8500家海外上游源头供应商资源（会员）、
 										宣传优势（亚洲最大食品展会SIAL China中食展）、精通贸易（18年国际贸易、展会经验）三大优势。
-									</p>	
+									</p>
 								</div>
 								<div class="bottom">
 									<span>查看详情</span>
@@ -83,17 +83,18 @@
 				
 				list: [
 					{
-						text: ''
+						text: '今日大牌果干上新三款新产品~',
+						name: '慕味飞盈'
 					},
 					{
-						text: ''
+						text: '今日大牌果干上新三款新产品~',
+						name: '客服中心'
 					},
 					{
-						text: ''
+						text: '您拼单的优鲜沛整颗蔓越莓产品拼团有新进展asfsdfdsfdsf',
+						name: '系统提示'
 					},
-					{
-						text: ''
-					},
+
 				]
 			}
 		},
@@ -101,13 +102,13 @@
 		created() {
 			this.classMap = ['','move']
 			this.$nextTick(() => {
-				this.$vux.loading.show({
-			        text: 'Loading...'
-			       
-			    })
-				setTimeout(() => {
-					this.$vux.loading.hide()
-				},1000)
+				// this.$vux.loading.show({
+			     //    text: 'Loading...'
+			     //
+                // })
+				// setTimeout(() => {
+				// 	this.$vux.loading.hide()
+				// },1000)
 				this.informScroll = new BScroll (this.$refs.informWrapper, {
 					click: true,
 				})
@@ -170,7 +171,12 @@
 			
 			onmeijihua() {
 				console.log('11')
+			},
+
+            onGoBack() {
+			    this.$router.go(-1)
 			}
+
 		},
 		
 		components: {
@@ -182,7 +188,50 @@
 </script>
 
 <style scoped>
-	
+
+	.container-tab {
+		display: flex;
+		flex-direction: column;
+		background: #f3f5f7;
+	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 50px;
+	}
+
+	.back {
+		width: 36px;
+		height: 36px;
+	}
+
+	.icon {
+		width: 50px;
+		height: 50px;
+	}
+
+	.messageindex {
+		position: relative;
+		background: url("../../assets/img/index/message.png") no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.messageindex p {
+		position: absolute;
+		top: 0;
+		right: -5px;
+		/*padding: 3px;*/
+		min-width: 30px;
+		height: 30px;
+		line-height: 30px;
+		font-size: 20px;
+		background: #ff0000;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
 	.tab {
 		position: relative;
 		display: flex;
@@ -190,6 +239,7 @@
 		line-height: 60px;
 		border-bottom: 1px solid #DEDEDE;
 		box-shadow: 0 0 3px #CCCCCC;
+		background: #FFF;
 	}
 	
 	.tab .slide {
@@ -199,7 +249,22 @@
 	.tab .move {
 		transform: translateX(536px);
 	}
-	
+
+	.tab > span {
+		position: absolute;
+		top: 3px;
+		right: 145px;
+		width: 20px;
+		height: 20px;
+		background: #ff0000;
+		border-radius: 50%;
+		transition: 0.5s;
+	}
+
+	.tab .top {
+		transform: translateY(-3px);
+	}
+
 	.tab .tab-item {
 		flex: 1;
 	}
@@ -220,44 +285,44 @@
 		transform: translateY(-5px);
 	}
 	
-	@keyframes moveam {
-		from {
-			transform: translateX(0);
-		}
-		25% {
-			transform: translateX(5px);
-		}
-		75% {
-			transform: translateX(-5px);
-		}
-		to {
-			transform: translateX(0);
-		}
-	}
+	/*@keyframes moveam {*/
+		/*from {*/
+			/*transform: translateX(0);*/
+		/*}*/
+		/*25% {*/
+			/*transform: translateX(5px);*/
+		/*}*/
+		/*75% {*/
+			/*transform: translateX(-5px);*/
+		/*}*/
+		/*to {*/
+			/*transform: translateX(0);*/
+		/*}*/
+	/*}*/
 	
-	.movep {
-		animation: moveam 2s infinite linear;
-	}
+	/*.movep {*/
+		/*animation: moveam 2s infinite linear;*/
+	/*}*/
 	
 	.content {
-		position: fixed;
-		width: 100%;
-		height: 1095px;
+		flex: 1;
+		background: #fff;
+		overflow: hidden;
 	} 
 	
 	.content .notice {
 		height: 100%;
 		background: #f9f9f9;
-		overflow: hidden;
+		/*overflow: hidden;*/
 	}
 	
 	.notice ul li {
-		padding: 20px 20px 50px 20px;
+		padding: 20px;
 	}
 	
 	.item .date {
 		margin-bottom: 5px;
-		font-size: 20px;
+		font-size: 24px;
 		color: #ccd2dd;
 		text-align: center;
 	}
@@ -306,11 +371,18 @@
 	
 	.inform ul li {
 		display: flex;
-		padding: 10px;
+		padding-left: 30px;
+		/*box-sizing: border-box;*/
+	}
+
+	.inform ul:last-child {
 		border-bottom: 1px solid rgba(7,17,27,0.1);
 	}
 	
 	.portrait {
+		position: relative;
+		flex: 0 0 120px;
+		padding: 10px 0;
 		width: 120px;
 		height: 120px;
 	}
@@ -318,15 +390,35 @@
 	.portrait img {
 		border-radius: 50%;
 	}
-	
+
+	.portrait p {
+		position: absolute;
+		top: 0;
+		right: -10px;
+		min-width: 40px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 28px;
+		color: #FFFFFF;
+		text-align: center;
+		background: red;
+		border-radius: 50%;
+	}
+
 	.message {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		padding-left: 20px;
+		margin-left: 20px;
+		padding-right: 30px;
+		border-bottom: 1px solid rgba(7,17,27,0.1);
 	}
-	
+
+	ul li:last-child .message {
+		border-bottom: none;
+	}
+
 	.message h3 {
 		display: flex;
 		justify-content: space-between;
@@ -334,22 +426,23 @@
 	}
 	
 	.message p {
-		font-size: 25px;
+		width: 500px;
+		font-size: 28px;
 		color: #999999;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 		overflow: hidden;
 	}
 	
 	h3 .name {
-		font-size: 35px;
+		font-size: 34px;
 		color: #333333;
 		font-weight: 700;
-		
 	}
 	
 	h3 .date {
 		font-size: 20px;
 		color: #666666;
 	}
-	
-	
+
 </style>

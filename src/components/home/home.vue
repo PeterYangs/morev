@@ -5,46 +5,46 @@
 			 	<keep-alive>
 			  		<router-view></router-view>
 				</keep-alive>	
-		</transition>
+			</transition>
 		</div>
-  	<div class="tab">
-  		<div class="tab-item">
-  			  <router-link to="/homepage">
-  			  	<span class="homepage"></span>
-  			  	<p>首页</p>
-  			  </router-link>
+  		<div class="tab">
+			<div class="tab-item">
+				  <router-link to="/homepage">
+					<span class="homepage"></span>
+					<p>首页</p>
+				  </router-link>
+			</div>
+			<div class="tab-item">
+				  <router-link to="/findgoods">
+					<span class="findgoods"></span>
+					<p>找货</p>
+				  </router-link>
+			</div>
+			<!--<div class="tab-item">
+				  <router-link to="/activity">
+					<span class="activity"></span>
+					<p>活动</p>
+				  </router-link>
+			</div>-->
+			<div class="tab-item">
+				  <router-link to="/message">
+					<span class="message"></span>
+					<p>消息</p>
+				  </router-link>
+			</div>
+			<div class="tab-item">
+				  <router-link to="/shoppingcart">
+					<span class="shoppingcart"></span>
+					<p>购物车</p>
+				  </router-link>
+			</div>
+			<div class="tab-item">
+				  <router-link to="/my">
+					<span class="my"></span>
+					<p>我的</p>
+				  </router-link>
+			</div>
   		</div>
-  		<div class="tab-item">
-  			  <router-link to="/findgoods">
-  			  	<span class="findgoods"></span>
-  			  	<p>找货</p>
-  			  </router-link>
-  		</div>
-  		<!--<div class="tab-item">
-  			  <router-link to="/activity">
-  			  	<span class="activity"></span>
-  			  	<p>活动</p>	
-  			  </router-link>
-  		</div>-->
-  		<div class="tab-item">
-  			  <router-link to="/message">
-  			  	<span class="message"></span>
-  			  	<p>消息</p>	
-  			  </router-link>
-  		</div>
-  		<div class="tab-item">
-  			  <router-link to="/shoppingcart">
-  			  	<span class="shoppingcart"></span>
-  			  	<p>购物车</p>
-  			  </router-link>
-  		</div>
-  		<div class="tab-item">
-  			  <router-link to="/my">
-  			  	<span class="my"></span>
-  			  	<p>我的</p>
-  			  </router-link>
-  		</div>
-  	</div>
   </div>
 </template>
 
@@ -74,27 +74,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	.homecontainer {
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: 100%;
+		display: flex;
+		flex-direction: column;
 		height: 100%;
-		
 	}
 	.main {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
+		flex: 1;
 	}
 	
 	.tab {
-		position: fixed;
-		width: 100%;
-		bottom: 0;
-		right: 0;
+		position: relative;
 		display: flex;
 		background:#009BE4;
+
 	}
 	
 	.tab-item {
@@ -195,9 +187,9 @@ export default {
   	transition: .5s;
   	
 	}
-	.hide-enter, .hide-leave-to {
+	.hide-enter {
 	  opacity: 0;
-	  transform: translateY(-10%);
+	  transform: translateY(-10px);
 	}
 	
 </style>
